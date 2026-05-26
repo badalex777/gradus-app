@@ -173,10 +173,20 @@ def run_tests() -> bool:
         print()
         print(f"   puede_aplicar    : {'SÍ' if resultado.puede_aplicar else 'NO'}  {simbolo_aplica}")
         print(f"   recibe_comision  : {'SÍ' if resultado.recibe_comision else 'NO'}  {simbolo_comision}")
-        print(f"   regla aplicada   : {resultado.nivel_especificidad}")
+        print(f"   nivel aplicado   : {resultado.nivel_especificidad}")
         print(f"   identidad que disparó la restricción: "
               f"{resultado.identidad_que_dispara or 'ninguna (default)'}")
-        print(f"   nota de la regla : {resultado.regla_aplicada}")
+        print(f"   mensaje para UI  : {resultado.regla_aplicada}")
+
+        # Desglose por identidad — lo que la UI usaría para el "expandir detalle"
+        print(f"\n   Desglose por identidad evaluada:")
+        for det in resultado.detalle_por_identidad:
+            marca = " ← RESTRICCIÓN" if det.es_la_mas_restrictiva else ""
+            aplica_str = "SÍ aplica" if det.puede_aplicar else "NO aplica"
+            comision_str = "con comisión" if det.recibe_comision else "sin comisión"
+            print(f"     · '{det.identidad}': {aplica_str}, {comision_str}"
+                  f" [{det.nivel_especificidad}]{marca}")
+
         print(f"\n   → {'✅ CORRECTO' if caso_ok else '❌ INCORRECTO'}")
 
         if not aplica_ok:
