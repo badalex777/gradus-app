@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+dist/
+build/
+.env
+
+# Base de datos (el archivo real se sincroniza vía Drive, no se sube a Git)
+data/catalogo.db
+data/catalogo.db-shm
+data/catalogo.db-wal
+data/backups/
+
+# Node
+node_modules/
+dist/
+.DS_Store
+
+# Credenciales
+credentials.json
+token.json
+*.key
