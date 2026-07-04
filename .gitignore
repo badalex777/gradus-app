@@ -23,3 +23,6 @@ dist/
 credentials.json
 token.json
 *.key
+
+# Claude Code (configuración local del entorno)
+.claude/settings.local.json
