@@ -13,6 +13,7 @@ data/catalogo.db
 data/catalogo.db-shm
 data/catalogo.db-wal
 data/backups/
+data/inventario.json
 
 # Node
 node_modules/
