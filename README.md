@@ -135,7 +135,7 @@ The extraction script processes Google Docs listed in the inventory, skips docum
 
 ## Privacy and public-repository warning
 
-**Do not publish the current `data/inventario.json` as-is.** It appears to contain real student-identifiable document names and Google Drive file IDs. Remove it from the public repository or replace it with fully synthetic sample data before making the repository public. If it has already been pushed to a public remote, removing it in a later commit will not erase it from Git history; rotate or revoke exposed access where appropriate and clean the history before publishing.
+**Do not publish this repository's existing Git history publicly.** An earlier committed version of `data/inventario.json` contains real student-identifiable document names and Google Drive file IDs. The local inventory is now ignored and excluded from the current Git index, but that does not remove it from earlier commits. Publishing this history would still expose the data. Before publishing, either clean the history (which changes commit IDs and requires coordinating a force-push) or create a fresh public history from a sanitized snapshot. If the old history has already been made public, remove it from public history and revoke any exposed access where appropriate.
 
 The extraction pipeline may process student information. Only use documents and services you are authorized to access, and follow the applicable privacy and data-handling requirements. Do not commit student documents, extracted records, database files, OAuth credentials, tokens, or API keys.
 
@@ -160,4 +160,4 @@ They require the local database and its seed rules. Initialize the database firs
 
 ## License
 
-No license has been added yet. Until one is chosen, standard copyright applies and others do not have explicit permission to reuse, modify, or distribute this code. Add a license before inviting reuse.
+This project is licensed under the [MIT License](LICENSE).
